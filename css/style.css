@@ -1,0 +1,301 @@
+@charset "UTF-8";
+/* header */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 80px;
+  padding: 0 40px;
+  z-index: 1;
+}
+#header h1 {
+  width: 175px;
+  height: 40px;
+}
+
+#nav {
+  position: fixed;
+  width: 300px;
+  left: -300px;
+  top: 0;
+  min-height: 100vh;
+  padding: 60px 20px;
+  color: #fff;
+  background: #000;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.5s;
+}
+
+#nav.active {
+  opacity: 1;
+  left: 0;
+}
+
+.menu {
+  margin-bottom: 50px;
+}
+.menu li {
+  border-top: 1px solid #fff;
+  padding: 25px 0;
+}
+.menu li a {
+  color: #fff;
+}
+
+.menu li:nth-last-child(1) {
+  border-bottom: 1px solid #fff;
+}
+
+.hamburger-menu {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.hamburger-menu span {
+  width: 30px;
+  height: 2px;
+  display: block;
+  background: #333;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 10px;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top: 20px;
+}
+
+.hamburger-menu span:nth-child(3) {
+  top: 30px;
+}
+
+/* ハンバーガーメニュークリックした時の表示 */
+.hamburger-menu.active span:nth-child(1) {
+  background: #fff;
+  transform: rotate(-135deg);
+  top: 20px;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  background: #fff;
+  transform: rotate(135deg);
+  top: 20px;
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  display: none;
+}
+
+.sns li {
+  padding-bottom: 15px;
+}
+.sns li a {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+#mask {
+  display: none;
+  transition: all 0.8s;
+}
+
+#mask.active {
+  width: 100%;
+  height: 100%;
+  background: #3a3a3a;
+  opacity: 0.8;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* footer */
+#footer {
+  background: #121212;
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  color: #121212;
+  font-size: 1.44rem;
+  position: relative;
+}
+
+#main {
+  padding-top: 80px;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 3.6rem;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* main */
+/* video */
+#video {
+  margin-bottom: 30px;
+}
+#video .bg-video {
+  width: 100%;
+}
+
+/* pick up */
+#pickup {
+  margin-bottom: 30px;
+}
+
+.slick-slider li {
+  padding: 0 20px;
+}
+
+/* FEATURE */
+#feature {
+  padding: 0 16px;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+.grid .item {
+  height: auto;
+  box-shadow: 0 0 8px 4px #ccc;
+}
+
+.item-text {
+  padding: 30px 30px 30px;
+}
+.item-text p.category {
+  padding-bottom: 40px;
+}
+.item-text p.text {
+  padding-bottom: 40px;
+  font-weight: bold;
+  line-height: 1.7;
+}
+.item-text p.days {
+  text-align: end;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}
+
+.scroll-in {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* CONTACT */
+#contact {
+  padding: 0 16px;
+  padding-bottom: 50px;
+  background: #121212;
+  color: #fff;
+}
+#contact h2 {
+  padding-top: 60px;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-text {
+  width: 45%;
+}
+.contact-text p {
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.contact-form {
+  width: 45%;
+}
+.contact-form dd {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 22px;
+  padding: 10px;
+}
+
+.button {
+  width: 200px;
+  border: solid 1px #fff;
+  margin-bottom: 0;
+}
+.button input {
+  width: 200px;
+  color: #fff;
+  padding: 15px 0;
+}
+
+/* SP版 */
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact .contact-text {
+    width: 100%;
+  }
+  .contact .contact-form {
+    width: 100%;
+  }
+  .contact .button {
+    width: 100%;
+  }
+  .contact .button input {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
