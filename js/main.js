@@ -2,11 +2,19 @@
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const navi = document.getElementById('nav');
 const mask = document.getElementById('mask');
+const header = document.getElementById('header');
 
 hamburgerMenu.addEventListener('click', () => {
   hamburgerMenu.classList.toggle('active');
   navi.classList.toggle('active');
   mask.classList.toggle('active');
+});
+
+// #maskのエリアをクリックした時にメニューを閉じる
+navi.addEventListener('click',() => {
+  navi.classList.toggle('active');
+  mask.classList.toggle('active');
+  hamburgerMenu.classList.toggle('active');
 });
 
 // slick
@@ -42,7 +50,7 @@ $(document).ready(function(){
 //     }
 //   }
 // });
-
+// フェードインの実装
 const fadeinTargets = document.querySelectorAll('.fade-in');
   window.addEventListener('scroll', () => {
     fadeinTargets.forEach((fadeinTarget) => {
@@ -54,6 +62,22 @@ const fadeinTargets = document.querySelectorAll('.fade-in');
         fadeinTarget.classList.add('scroll-in');
       }
   });
-
 });
 	
+// スムーススクロールの実装
+const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+  smoothScrollTrigger.forEach((smoothscroll) => {
+    smoothscroll.addEventListener('click', (e) => {
+      e.preventDefault();
+      let href = smoothscroll.getAttribute('href');
+      let targetElement = document.getElementById(href.replace('#',''));
+      const rect = targetElement.getBoundingClientRect().top;
+      const offset = window.pageYOffset;
+      const gap = 60;
+      const target = rect + offset - gap;
+      window.scrollTo({
+        top:target,
+        behavior:'smooth',
+      });
+    });
+  });
