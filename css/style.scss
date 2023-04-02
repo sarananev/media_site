@@ -76,6 +76,7 @@ li {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
   gap: 26px;
   .item {
     height: auto;
@@ -115,11 +116,6 @@ li {
   padding-bottom: 50px;
   background: #121212;
   color: #fff;
-  h2 {
-    padding-top: 60px;
-  }
-  
-
 }
 
 .contact {
