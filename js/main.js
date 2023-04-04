@@ -22,7 +22,15 @@ const swiper = new Swiper(".swiper", {
   slidesPerView: 1.5,
   spaceBetween: 20,
   centeredSlides: true,
-  breakpoints: {
+  loop: true,
+  loopAdditionalSlides: 1,
+  speed: 1000,
+  autoplay: {
+    enabled: true,
+    delay: 4000,
+    disableOnInteraction: false,
+  },   
+breakpoints: {
     // 768px以上の場合
     768: {
       slidesPerView: 3.5,
