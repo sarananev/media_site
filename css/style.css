@@ -10,7 +10,7 @@
   right: 0;
   height: 80px;
   padding: 0 40px;
-  z-index: 1;
+  z-index: 2;
 }
 #header h1 {
   width: 175px;
@@ -27,7 +27,7 @@
   color: #fff;
   background: #000;
   opacity: 0;
-  z-index: 2;
+  z-index: 3;
   transition: all 0.5s;
 }
 
@@ -151,6 +151,7 @@ body {
 
 .wrapper {
   width: 100%;
+  max-width: 85%;
   margin: 0 auto;
 }
 
@@ -193,6 +194,7 @@ li {
   overflow: hidden;
   position: relative;
   padding: 0 100px;
+  z-index: 1;
 }
 
 .swiper-wrapper {
