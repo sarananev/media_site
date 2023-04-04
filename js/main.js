@@ -32,6 +32,7 @@ const swiper = new Swiper(".swiper", {
       loopAdditionalSlides: 1,
       speed: 1000,
       autoplay: {
+        enabled: true,
         delay: 4000,
         disableOnInteraction: false,
       },   
