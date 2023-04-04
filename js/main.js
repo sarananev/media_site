@@ -17,25 +17,47 @@ navi.addEventListener('click',() => {
   hamburgerMenu.classList.toggle('active');
 });
 
-// slick
-$(document).ready(function(){
-  $('.slick-slider').slick({
-//    setting-name: setting-value
-    arrows: false,
-    slidesToShow: 3,
-    centerMode: true,
-    centerPadding: '100px',
-    responsive:[
-      {
-        breakpoint: 768,
-        settings:{
-          centerPadding: '50px',
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
+// swiper
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 1.5,
+  spaceBetween: 20,
+  centeredSlides: true,
+  breakpoints: {
+    // 768px以上の場合
+    768: {
+      slidesPerView: 3.5,
+      spaceBetween: 60,
+      centeredSlides: true,
+      loop: true,
+      loopAdditionalSlides: 1,
+      speed: 1000,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },   
+    },
+  },
 });
+
+// slick
+// $(document).ready(function(){
+//   $('.slick-slider').slick({
+// //    setting-name: setting-value
+//     arrows: false,
+//     slidesToShow: 3,
+//     centerMode: true,
+//     centerPadding: '100px',
+//     responsive:[
+//       {
+//         breakpoint: 768,
+//         settings:{
+//           centerPadding: '50px',
+//           slidesToShow: 1
+//         }
+//       }
+//     ]
+//   });
+// });
 
 // フェードインの実装
 // let fadeInTarget = document.querySelectorAll('.fade-in');
